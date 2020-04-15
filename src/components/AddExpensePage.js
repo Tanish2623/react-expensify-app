@@ -21,7 +21,7 @@ export class AddExpensePage extends React.Component{
   }
 }
 
-const mapDispatchToprops = () => {
+const mapDispatchToprops = (dispatch) => {
   return {
     addExpense: (expense) => dispatch(addExpense(expense))
   };  
