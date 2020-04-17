@@ -9,7 +9,7 @@ class ExpenseForm extends React.Component{
 
         this.state = {
             description: props.expense ? props.expense.description : '',
-            notes : props.expense ? props.expense.notes : '',
+            note : props.expense ? props.expense.note : '',
             amount : props.expense ? (props.expense.amount /100).toString() : '',
             createdAt : props.expense ? moment(props.expense.createdAt): moment(),
             calenderFocused : false,
@@ -22,8 +22,8 @@ class ExpenseForm extends React.Component{
         this.setState(() => ({description}));
     }
     onTextAreaChange = (e) => {
-        const notes = e.target.value;
-        this.setState(() => ({notes}));
+        const note = e.target.value;
+        this.setState(() => ({note}));
     }
     onAmountChange = (e) => {
         const amount = e.target.value;
@@ -51,7 +51,7 @@ class ExpenseForm extends React.Component{
                 description:this.state.description,
                 amount : parseFloat(this.state.amount)*100,
                 createdAt : this.state.createdAt.valueOf(),
-                notes : this.state.notes
+                note : this.state.note
             })
         }
     }
@@ -84,7 +84,7 @@ class ExpenseForm extends React.Component{
                     />
                     <textarea
                         placeholder= "add a note on expense"
-                        value={this.state.notes}
+                        value={this.state.note}
                         onChange={this.onTextAreaChange}
                     >
                     </textarea>

@@ -57,12 +57,12 @@ test('should edit expense from firebase', (done) => {
 })
 
 test('should setup edit expense action object', () => {
-const action =editExpense('123abc', {notes:'qwee'});
+const action =editExpense('123abc', {note:'qwee'});
     expect(action).toEqual({
         type: 'EDIT_EXPENSE',
         id: "123abc",
         updates : {
-            notes : 'qwee'
+            note : 'qwee'
         } 
     })
 })

@@ -40,7 +40,7 @@ test('should set note on textarea change', () => {
     wrapper.find('textarea').at(0).simulate('change', {
         target : { value }
     });
-    expect(wrapper.state('notes')).toBe(value);
+    expect(wrapper.state('note')).toBe(value);
 });
 
 test('should set amount if valid input', () => {
@@ -72,7 +72,7 @@ test('should call onSubmit prop for valid form submission' , () => {
     expect(onSubmitSpy).toHaveBeenLastCalledWith({
         description : expenses[0].description,
         amount : expenses[0].amount,
-        notes : expenses[0].notes,
+        note : expenses[0].note,
         createdAt: expenses[0].createdAt
     });
 });
